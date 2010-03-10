@@ -1,0 +1,544 @@
+D G "__PCH__" 0 131 ""4.038""
+D G "__DEVICE__" 0 131 "2550"
+D G "__DATE__" 0 131 ""10-mar-10""
+D G "__TIME__" 0 131 ""00:02:29"" "Standard Header file for the PIC18F2550 device ////////////////"
+d G "PIN_A0" 2 27 "31744"
+d G "PIN_A1" 2 28 "31745"
+d G "PIN_A2" 2 29 "31746"
+d G "PIN_A3" 2 30 "31747"
+d G "PIN_A4" 2 31 "31748"
+d G "PIN_A5" 2 32 "31749"
+d G "PIN_A6" 2 33 "31750"
+d G "PIN_B0" 2 35 "31752"
+d G "PIN_B1" 2 36 "31753"
+d G "PIN_B2" 2 37 "31754"
+d G "PIN_B3" 2 38 "31755"
+d G "PIN_B4" 2 39 "31756"
+d G "PIN_B5" 2 40 "31757"
+d G "PIN_B6" 2 41 "31758"
+d G "PIN_B7" 2 42 "31759"
+d G "PIN_C0" 2 44 "31760"
+d G "PIN_C1" 2 45 "31761"
+d G "PIN_C2" 2 46 "31762"
+d G "PIN_C3" 2 47 "31763"
+d G "PIN_C4" 2 48 "31764"
+d G "PIN_C5" 2 49 "31765"
+d G "PIN_C6" 2 50 "31766"
+d G "PIN_C7" 2 51 "31767"
+d G "PIN_E3" 2 53 "31779"
+d G "FALSE" 2 56 "0"
+d G "TRUE" 2 57 "1"
+d G "BYTE" 2 59 "int"
+d G "BOOLEAN" 2 60 "short int"
+d G "getc" 2 62 "getch"
+d G "fgetc" 2 63 "getch"
+d G "getchar" 2 64 "getch"
+d G "putc" 2 65 "putchar"
+d G "fputc" 2 66 "putchar"
+d G "fgets" 2 67 "gets"
+d G "fputs" 2 68 "puts"
+d G "WDT_TIMEOUT" 2 74 "7"
+d G "MCLR_FROM_SLEEP" 2 75 "11"
+d G "MCLR_FROM_RUN" 2 76 "15"
+d G "NORMAL_POWER_UP" 2 77 "12"
+d G "BROWNOUT_RESTART" 2 78 "14"
+d G "WDT_FROM_SLEEP" 2 79 "3"
+d G "RESET_INSTRUCTION" 2 80 "0"
+d G "RTCC_INTERNAL" 2 87 "0"
+d G "RTCC_EXT_L_TO_H" 2 88 "32"
+d G "RTCC_EXT_H_TO_L" 2 89 "48"
+d G "RTCC_DIV_1" 2 91 "8"
+d G "RTCC_DIV_2" 2 92 "0"
+d G "RTCC_DIV_4" 2 93 "1"
+d G "RTCC_DIV_8" 2 94 "2"
+d G "RTCC_DIV_16" 2 95 "3"
+d G "RTCC_DIV_32" 2 96 "4"
+d G "RTCC_DIV_64" 2 97 "5"
+d G "RTCC_DIV_128" 2 98 "6"
+d G "RTCC_DIV_256" 2 99 "7"
+d G "RTCC_OFF" 2 101 "0x80"
+d G "RTCC_8_BIT" 2 103 "0x40"
+d G "WDT_ON" 2 113 "0x100"
+d G "WDT_OFF" 2 114 "0"
+d G "T1_DISABLED" 2 120 "0"
+d G "T1_INTERNAL" 2 121 "0x85"
+d G "T1_EXTERNAL" 2 122 "0x87"
+d G "T1_EXTERNAL_SYNC" 2 123 "0x83"
+d G "T1_CLK_OUT" 2 125 "8"
+d G "T1_DIV_BY_1" 2 127 "0"
+d G "T1_DIV_BY_2" 2 128 "0x10"
+d G "T1_DIV_BY_4" 2 129 "0x20"
+d G "T1_DIV_BY_8" 2 130 "0x30"
+d G "T2_DISABLED" 2 135 "0"
+d G "T2_DIV_BY_1" 2 136 "4"
+d G "T2_DIV_BY_4" 2 137 "5"
+d G "T2_DIV_BY_16" 2 138 "6"
+d G "T3_DISABLED" 2 144 "0"
+d G "T3_INTERNAL" 2 145 "0x85"
+d G "T3_EXTERNAL" 2 146 "0x87"
+d G "T3_EXTERNAL_SYNC" 2 147 "0x83"
+d G "T3_DIV_BY_1" 2 149 "0"
+d G "T3_DIV_BY_2" 2 150 "0x10"
+d G "T3_DIV_BY_4" 2 151 "0x20"
+d G "T3_DIV_BY_8" 2 152 "0x30"
+d G "CCP_OFF" 2 158 "0"
+d G "CCP_CAPTURE_FE" 2 159 "4"
+d G "CCP_CAPTURE_RE" 2 160 "5"
+d G "CCP_CAPTURE_DIV_4" 2 161 "6"
+d G "CCP_CAPTURE_DIV_16" 2 162 "7"
+d G "CCP_COMPARE_SET_ON_MATCH" 2 163 "8"
+d G "CCP_COMPARE_CLR_ON_MATCH" 2 164 "9"
+d G "CCP_COMPARE_INT" 2 165 "0xA"
+d G "CCP_COMPARE_INT_AND_TOGGLE" 2 166 "0x2"
+d G "CCP_COMPARE_RESET_TIMER" 2 167 "0xB"
+d G "CCP_PWM" 2 168 "0xC"
+d G "CCP_PWM_PLUS_1" 2 169 "0x1c"
+d G "CCP_PWM_PLUS_2" 2 170 "0x2c"
+d G "CCP_PWM_PLUS_3" 2 171 "0x3c"
+d G "CCP_USE_TIMER3" 2 172 "0x100"
+v G "CCP_1" 2 173 "int16"
+v G "CCP_2" 2 177 "int16"
+d G "SPI_MASTER" 2 184 "0x20"
+d G "SPI_SLAVE" 2 185 "0x24"
+d G "SPI_L_TO_H" 2 186 "0"
+d G "SPI_H_TO_L" 2 187 "0x10"
+d G "SPI_CLK_DIV_4" 2 188 "0"
+d G "SPI_CLK_DIV_16" 2 189 "1"
+d G "SPI_CLK_DIV_64" 2 190 "2"
+d G "SPI_CLK_T2" 2 191 "3"
+d G "SPI_SS_DISABLED" 2 192 "1"
+d G "SPI_SAMPLE_AT_END" 2 194 "0x8000"
+d G "SPI_XMIT_L_TO_H" 2 195 "0x4000"
+d G "UART_ADDRESS" 2 201 "2"
+d G "UART_DATA" 2 202 "4"
+d G "UART_AUTODETECT" 2 203 "8"
+d G "UART_AUTODETECT_NOWAIT" 2 204 "9"
+d G "UART_WAKEUP_ON_RDA" 2 205 "10"
+d G "UART_SEND_BREAK" 2 206 "13"
+d G "A0_A3_A1_A3" 2 210 "0xfff04"
+d G "A0_A3_A1_A2_OUT_ON_A4_A5" 2 211 "0xfcf03"
+d G "A0_A3_A1_A3_OUT_ON_A4_A5" 2 212 "0xbcf05"
+d G "NC_NC_NC_NC" 2 213 "0x0ff07"
+d G "A0_A3_A1_A2" 2 214 "0xfff02"
+d G "A0_A3_NC_NC_OUT_ON_A4" 2 215 "0x9ef01"
+d G "A0_VR_A1_VR" 2 216 "0x3ff06"
+d G "A3_VR_A2_VR" 2 217 "0xcff0e"
+d G "CP1_INVERT" 2 218 "0x0000010"
+d G "CP2_INVERT" 2 219 "0x0000020"
+d G "VREF_LOW" 2 227 "0xa0"
+d G "VREF_HIGH" 2 228 "0x80"
+d G "VREF_F5" 2 230 "0x40"
+d G "VREF_COMP" 2 231 "0x10"
+d G "LVD_LVDIN" 2 236 "0x1F"
+d G "LVD_45" 2 237 "0x1E"
+d G "LVD_42" 2 238 "0x1D"
+d G "LVD_40" 2 239 "0x1C"
+d G "LVD_38" 2 240 "0x1B"
+d G "LVD_36" 2 241 "0x1A"
+d G "LVD_35" 2 242 "0x19"
+d G "LVD_33" 2 243 "0x18"
+d G "LVD_30" 2 244 "0x17"
+d G "LVD_28" 2 245 "0x16"
+d G "LVD_27" 2 246 "0x15"
+d G "LVD_25" 2 247 "0x14"
+d G "LVD_24" 2 248 "0x13"
+d G "LVD_23" 2 249 "0x12"
+d G "LVD_22" 2 250 "0x11"
+d G "LVD_21" 2 251 "0x10"
+d G "LVD_TRIGGER_BELOW" 2 253 "0"
+d G "LVD_TRIGGER_ABOVE" 2 254 "0x80"
+d G "OSC_31KHZ" 2 260 "0"
+d G "OSC_125KHZ" 2 261 "0x10"
+d G "OSC_250KHZ" 2 262 "0x20"
+d G "OSC_500KHZ" 2 263 "0x30"
+d G "OSC_1MHZ" 2 264 "0x40"
+d G "OSC_2MHZ" 2 265 "0x50"
+d G "OSC_4MHZ" 2 266 "0x60"
+d G "OSC_8MHZ" 2 267 "0x70"
+d G "OSC_16MHZ" 2 268 "0x4060"
+d G "OSC_32MHZ" 2 269 "0x4070"
+d G "OSC_TIMER1" 2 271 "1"
+d G "OSC_INTRC" 2 272 "2"
+d G "OSC_NORMAL" 2 273 "0"
+d G "OSC_IDLE_MODE" 2 275 "0x80"
+d G "OSC_31250" 2 276 "0x8000"
+d G "OSC_PLL_ON" 2 277 "0x4000"
+d G "OSC_PLL_OFF" 2 278 "0"
+d G "OSC_STATE_STABLE" 2 282 "4"
+d G "OSC_STATE_EXT_RUNNING" 2 283 "8"
+d G "ADC_OFF" 2 290 "0" "ADC Off"
+d G "ADC_CLOCK_DIV_2" 2 291 "0x100"
+d G "ADC_CLOCK_DIV_4" 2 292 "0x04"
+d G "ADC_CLOCK_DIV_8" 2 293 "0x01"
+d G "ADC_CLOCK_DIV_16" 2 294 "0x05"
+d G "ADC_CLOCK_DIV_32" 2 295 "0x02"
+d G "ADC_CLOCK_DIV_64" 2 296 "0x06"
+d G "ADC_CLOCK_INTERNAL" 2 297 "0x07" "Internal 2-6us"
+d G "NO_ANALOGS" 2 300 "0x0F" "None"
+d G "ALL_ANALOG" 2 301 "0x00" "A0 A1 A2 A3 A5 B2 B3 B1 B4 B0"
+d G "AN0_TO_AN11" 2 302 "0x03" "A0 A1 A2 A3 A5 B2 B3 B1 B4"
+d G "AN0_TO_AN10" 2 303 "0x04" "A0 A1 A2 A3 A5 B2 B3 B1"
+d G "AN0_TO_AN9" 2 304 "0x05" "A0 A1 A2 A3 A5 B2 B3"
+d G "AN0_TO_AN8" 2 305 "0x06" "A0 A1 A2 A3 A5 B2"
+d G "AN0_TO_AN4" 2 306 "0x0A" "A0 A1 A2 A3 A5"
+d G "AN0_TO_AN3" 2 307 "0x0B" "A0 A1 A2 A3"
+d G "AN0_TO_AN2" 2 308 "0x0C" "A0 A1 A2"
+d G "AN0_TO_AN1" 2 309 "0x0D" "A0 A1"
+d G "AN0" 2 310 "0x0E" "A0"
+d G "AN0_TO_AN11_ANALOG" 2 311 "0x03" "!old only provided for compatibility"
+d G "AN0_TO_AN10_ANALOG" 2 312 "0x04" "!old only provided for compatibility"
+d G "AN0_TO_AN9_ANALOG" 2 313 "0x05" "!old only provided for compatibility"
+d G "AN0_TO_AN8_ANALOG" 2 314 "0x06" "!old only provided for compatibility"
+d G "AN0_TO_AN4_ANALOG" 2 315 "0x0A" "!old only provided for compatibility"
+d G "AN0_TO_AN3_ANALOG" 2 316 "0x0B" "!old only provided for compatibility"
+d G "AN0_TO_AN2_ANALOG" 2 317 "0x0C" "!old only provided for compatibility"
+d G "AN0_TO_AN1_ANALOG" 2 318 "0x0D" "!old only provided for compatibility"
+d G "AN0_ANALOG" 2 319 "0x0E" "!old only provided for compatibility"
+d G "VSS_VDD" 2 322 "0x00" "Range 0-Vdd"
+d G "VREF_VREF" 2 323 "0x30" "Range VrefL-VrefH"
+d G "VREF_VDD" 2 324 "0x20" "Range VrefL-Vdd"
+d G "VSS_VREF" 2 325 "0x10" "Range 0-VrefH"
+d G "ADC_START_AND_READ" 2 329 "7" "This is the default if nothing is specified"
+d G "ADC_START_ONLY" 2 330 "1"
+d G "ADC_READ_ONLY" 2 331 "6"
+d G "L_TO_H" 2 340 "0x40"
+d G "H_TO_L" 2 341 "0"
+d G "GLOBAL" 2 343 "0xF2C0"
+d G "INT_RTCC" 2 344 "0xF220"
+d G "INT_TIMER0" 2 345 "0xF220"
+d G "INT_TIMER1" 2 346 "0x9D01"
+d G "INT_TIMER2" 2 347 "0x9D02"
+d G "INT_TIMER3" 2 348 "0xA002"
+d G "INT_EXT" 2 349 "0xF210"
+d G "INT_EXT1" 2 350 "0xF008"
+d G "INT_EXT2" 2 351 "0xF010"
+d G "INT_RB" 2 352 "0xFFF208"
+d G "INT_AD" 2 353 "0x9D40"
+d G "INT_RDA" 2 354 "0x9D20"
+d G "INT_TBE" 2 355 "0x9D10"
+d G "INT_SSP" 2 356 "0x9D08"
+d G "INT_CCP1" 2 357 "0x9D04"
+d G "INT_CCP2" 2 358 "0xA001"
+d G "INT_BUSCOL" 2 359 "0xA008"
+d G "INT_LOWVOLT" 2 360 "0xA004"
+d G "INT_COMP" 2 361 "0xA040"
+d G "INT_EEPROM" 2 362 "0xA010"
+d G "INT_OSCF" 2 363 "0xA080"
+d G "INT_USB" 2 364 "0xA020"
+D G "MMC_CS" 3 1 "PIN_A5"
+V L "response" 3 3 "int8"
+F G "mmc_response" 3 4 "int8(int8 response)"
+V L "count" 3 5 "int16"
+V L "block_number" 3 18 "int32"
+F G "mmc_open_block" 3 19 "int8(int32 block_number)"
+V L "addr" 3 20 "int8[4]"
+F G "mmc_close_block" 3 43 "void()"
+V L "block_number" 3 50 "int16"
+F G "mmc_read_block_to_serial" 3 51 "int8(int16 block_number)"
+V L "i" 3 52 "int16"
+V L "j" 3 53 "int16"
+F G "mmc_init" 3 71 "int8()"
+V L "i" 3 72 "int8"
+C L "mmc_init" 3 76 1 "FUNCTION"
+D G "EOD" 4 12 "0"
+D G "UNUSED" 4 13 "1"
+D G "LFNAME" 4 14 "2"
+D G "NFNAME" 4 15 "3"
+D G "NDNAME" 4 16 "4" "Normal directory"
+D G "BUFFER_SIZE" 4 19 "512"
+D G "DIRENTRY_SIZE" 4 20 "32"
+D G "FILENAME_SIZE" 4 21 "12"
+D G "FILEDATA_SIZE" 4 22 "32"
+D G "PARTITION_ENTRY_SIZE" 4 23 "16"
+D G "FIRST_PARTITION_ENTRY" 4 25 "0x1BE"
+V G "SectorBuffer" 4 28 "int8[512]"
+V G "DirEntry" 4 29 "int8[32]" "Volume ID information"
+V G "BytesPerSector" 4 32 "int16"
+V G "SectorsPerCluster" 4 33 "int8"
+V G "NumberOfReservedSectors" 4 34 "int16"
+V G "NumberOfFATs" 4 35 "int8"
+V G "SectorsPerFAT" 4 36 "int32"
+V G "RootDirectoryFirstCluster" 4 37 "int32" "Information related to partitions and FAT table"
+V G "PartitionLBABegin" 4 40 "int32"
+V G "FatBeginLBA" 4 41 "int32" "unsigned int32 ClusterBeginLBA;"
+V G "DataBeginLBA" 4 43 "int32"
+V G "FAT16Offset" 4 44 "int8" "Variables used to store the position of current entry"
+V G "DirectoryCurrentCluster" 4 48 "int32"
+V G "DirectoryCurrentLBA" 4 49 "int32"
+V G "DirectoryCurrentDirEntry" 4 50 "int8"
+V G "DirectoryCurrentSector" 4 51 "int16"
+V G "DirectoryOpened" 4 52 "int1"
+V G "EODReached" 4 53 "int1" "Variables used to store file information when reading"
+V G "FileCurrentCluster" 4 56 "int32"
+V G "FileCurrentLBA" 4 57 "int32"
+V G "FileCurrentSector" 4 58 "int16"
+V G "FileLengthCount" 4 59 "int32"
+V G "FileSectorPosition" 4 60 "int16"
+V G "FileOpened" 4 61 "int1" "File descriptor structure"
+T G "FILEDESCRIPTOR" 4 71 "{int8[12] Name,int8 Attributes,int32 FirstLBA,int32 Size,int32 FirstCluster}" "A partition Entry structure"
+T G "PARTITIONENTRY" 4 79 "{int1 IsValid,int1 IsFAT32,int8 Type}" "File data structure"
+T G "FILEDATA" 4 87 "{int8[32] Buffer,int16 BytesRead,int1 EOF}"
+V G "pEntry" 4 89 "PARTITIONENTRY" "-- Start of Code Section -------------"
+V L "lba" 4 93 "int32"
+F G "ReadSector" 4 94 "int8(int32 lba)"
+V L "i" 4 95 "int16"
+V L "num" 4 107 "int8"
+F G "ReadDirEntry" 4 108 "void(int8 num)" "Calculate Directory Entry offset according to Directory Entry number"
+V L "offset" 4 110 "int16"
+V L "i" 4 111 "int16"
+C L "ReadDirEntry" 4 1 2 "FUNCTION"
+V L "startingPos" 4 122 "int16"
+F G "GetEntry" 4 123 "int8(int16 startingPos)"
+C L "GetEntry" 4 1 1 "FUNCTION"
+F G "FindFirstFATPartition" 4 153 "int8()"
+V L "i" 4 154 "int8" "Read the first Sector"
+C L "FindFirstFATPartition" 4 1 1 "FUNCTION"
+C L "FindFirstFATPartition" 4 1 1 "FUNCTION"
+C L "FindFirstFATPartition" 4 1 1 "FUNCTION"
+F G "ReadVolumeID" 4 181 "int8()" "Read the first sector of the partition"
+C L "ReadVolumeID" 4 1 1 "FUNCTION"
+C L "ReadVolumeID" 4 1 1 "FUNCTION"
+C L "ReadVolumeID" 4 1 2 "FUNCTION"
+C L "ReadVolumeID" 4 1 1 "FUNCTION"
+C L "ReadVolumeID" 4 1 1 "FUNCTION"
+C L "ReadVolumeID" 4 1 1 "FUNCTION"
+C L "ReadVolumeID" 4 1 1 "FUNCTION"
+C L "ReadVolumeID" 4 1 1 "FUNCTION"
+C L "ReadVolumeID" 4 1 1 "FUNCTION"
+C L "ReadVolumeID" 4 1 1 "FUNCTION"
+C L "ReadVolumeID" 4 1 1 "FUNCTION"
+V L "clusternumber" 4 229 "int32"
+F G "ComputeLBA" 4 230 "int32(int32 clusternumber)" "Compute the LBA number using the Cluster Number{"
+F G "CheckIfEOD" 4 236 "int8()" "Check if the current directory entry (contained in the DirEntry vector)"
+C L "CheckIfEOD" 4 1 1 "FUNCTION"
+F G "GetAttib" 4 250 "int8()" "Get the Attributes byte from current Directory Entry"
+F G "CheckIfNormalFile" 4 256 "int8()" "Check if the Directory Entry corresponds to a Normal File Name"
+V L "attr" 4 258 "int8"
+C L "CheckIfNormalFile" 4 1 1 "FUNCTION"
+F G "DetermineDirEntryType" 4 275 "int8()" "Determine the Directory Entry type"
+C L "DetermineDirEntryType" 4 1 1 "FUNCTION"
+C L "DetermineDirEntryType" 4 1 1 "FUNCTION"
+C L "DetermineDirEntryType" 4 1 1 "FUNCTION"
+C L "DetermineDirEntryType" 4 1 1 "FUNCTION"
+F G "GetFileSize" 4 307 "int32()" "Get the file size of the current Directory Entry"
+V L "filename" 4 312 "*int8"
+F G "GetFileName" 4 313 "void(*int8 filename)" "Get the 8+3 FAT32 short file name."
+C L "GetFileName" 4 1 2 "FUNCTION"
+V L "i" 4 317 "int8"
+V L "filename" 4 331 "*int8"
+F G "GetDirName" 4 332 "void(*int8 filename)" "Get the 8 FAT32 short file name."
+C L "GetDirName" 4 1 2 "FUNCTION"
+V L "i" 4 336 "int8"
+F G "GetFileFirstCluster" 4 348 "int32()" "Get the file first cluster using the current Directory Entry data"
+V L "clusternumber" 4 353 "int32"
+F G "ReadFAT" 4 354 "int32(int32 clusternumber)" "This might be one of the most complicated functions in the entire FAT16/32"
+C L "ReadFAT" 4 1 4 "FUNCTION"
+V L "calc" 4 362 "int32"
+V L "offset" 4 363 "int32"
+V L "rest" 4 364 "int32"
+V L "soff" 4 365 "int32"
+C L "ReadFAT" 4 1 1 "FUNCTION"
+C L "ReadFAT" 4 1 1 "FUNCTION"
+C L "ReadFAT" 4 1 1 "FUNCTION"
+C L "ReadFAT" 4 1 1 "FUNCTION"
+V L "directorycluster" 4 382 "int32"
+F G "OpenDirectory" 4 383 "void(int32 directorycluster)" "Initialize the variables needed to follow the directory pointed by"
+C L "OpenDirectory" 4 1 1 "FUNCTION"
+F G "FindNextFile" 4 396 "FILEDESCRIPTOR()" "Define the variables that will be used"
+V L "thefile" 4 398 "FILEDESCRIPTOR"
+V L "filefound" 4 399 "int1" "Set initial values"
+C L "FindNextFile" 4 1 1 "FUNCTION"
+C L "FindNextFile" 4 1 1 "FUNCTION"
+C L "FindNextFile" 4 1 1 "FUNCTION"
+C L "FindNextFile" 4 1 1 "FUNCTION"
+C L "FindNextFile" 4 1 1 "FUNCTION"
+C L "FindNextFile" 4 1 1 "FUNCTION"
+C L "FindNextFile" 4 1 4 "FUNCTION"
+C L "FindNextFile" 4 1 1 "FUNCTION"
+C L "FindNextFile" 4 1 1 "FUNCTION"
+C L "FindNextFile" 4 1 1 "FUNCTION"
+C L "FindNextFile" 4 1 4 "FUNCTION"
+C L "FindNextFile" 4 1 1 "FUNCTION"
+C L "FindNextFile" 4 1 2 "FUNCTION"
+C L "FindNextFile" 4 1 1 "FUNCTION"
+C L "FindNextFile" 4 1 1 "FUNCTION"
+C L "FindNextFile" 4 1 1 "FUNCTION"
+C L "FindNextFile" 4 1 1 "FUNCTION"
+C L "FindNextFile" 4 1 1 "FUNCTION"
+C L "FindNextFile" 4 1 1 "FUNCTION"
+C L "FindNextFile" 4 1 1 "FUNCTION"
+C L "FindNextFile" 4 1 1 "FUNCTION"
+C L "FindNextFile" 4 1 1 "FUNCTION"
+F G "CloseDirectory" 4 500 "void()" "Close the directory"
+V L "file" 4 505 "FILEDESCRIPTOR"
+F G "OpenFile" 4 506 "void(FILEDESCRIPTOR file)" "Initialize the variables needed to follow the file pointed by"
+C L "OpenFile" 4 1 1 "FUNCTION"
+V L "file" 4 518 "FILEDESCRIPTOR"
+V L "count" 4 518 "int32"
+F G "ReadFile" 4 519 "FILEDATA(FILEDESCRIPTOR file,int32 count)" "Define the variables that will be used"
+V L "data" 4 521 "FILEDATA"
+V L "BytesRead" 4 522 "int16"
+V L "i" 4 523 "int16" "Set initial values and initialize the Buffer vector"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+C L "ReadFile" 4 1 1 "FUNCTION"
+F G "CloseFile" 4 608 "void()" "Close the currently opened file"
+F G "MAIN" 0 6 "void()"
+V L "i" 0 7 "int16"
+V L "j" 0 8 "int16"
+V L "c" 0 9 "int16" "Create a file descriptor"
+V L "fd" 0 12 "FILEDESCRIPTOR" "Create a FileData structure"
+V L "data" 0 15 "FILEDATA"
+C L "MAIN" 0 21 1 "FUNCTION"
+C L "MAIN" 0 21 2 "FUNCTION"
+C L "MAIN" 0 21 3 "FUNCTION"
+C L "MAIN" 0 21 3 "FUNCTION"
+C L "MAIN" 0 21 1 "FUNCTION"
+C L "MAIN" 0 21 1 "FUNCTION"
+C L "MAIN" 0 21 1 "FUNCTION"
+C L "MAIN" 0 21 4 "FUNCTION"
+C L "MAIN" 0 21 1 "FUNCTION"
+C L "MAIN" 0 21 1 "FUNCTION"
+C L "MAIN" 0 21 1 "FUNCTION"
+C L "MAIN" 0 21 1 "FUNCTION"
+F B "reset_cpu" 0 0
+F B "abs" 1 0
+F B "sleep" 0 0
+F B "delay_cycles" 1 0
+F B "read_bank" 2 0
+F B "write_bank" 3 0
+F B "shift_left" 2 2
+F B "shift_right" 2 2
+F B "rotate_left" 2 0
+F B "rotate_right" 2 0
+F B "_mul" 2 0
+F B "strcpy" 2 0
+F B "memset" 3 0
+F B "memcpy" 3 0
+F B "isamoung" 2 0
+F B "isamong" 2 0
+F B "bit_set" 2 0
+F B "bit_clear" 2 0
+F B "bit_test" 2 0
+F B "toupper" 1 0
+F B "tolower" 1 0
+F B "swap" 1 0
+F B "printf" 1 255
+F B "fprintf" 1 255
+F B "sprintf" 1 255
+F B "make8" 2 0
+F B "make16" 2 0
+F B "make32" 1 255
+F B "label_address" 1 1
+F B "goto_address" 1 0
+F B "_va_arg" 1 0
+F B "offsetofbit" 2 2
+F B "enable_interrupts" 1 0
+F B "disable_interrupts" 1 0
+F B "interrupt_active" 1 0
+F B "clear_interrupt" 1 0
+F B "jump_to_isr" 1 0
+F B "ext_int_edge" 1 2
+F B "read_eeprom" 1 0
+F B "write_eeprom" 2 0
+F B "read_program_eeprom" 1 0
+F B "write_program_eeprom" 2 0
+F B "write_program_memory" 3 0
+F B "read_program_memory" 3 0
+F B "erase_program_eeprom" 1 0
+F B "read_external_memory" 3 0
+F B "write_external_memory" 3 0
+F B "setup_external_memory" 1 0
+F B "write_configuration_memory" 2 3
+F B "read_configuration_memory" 2 3
+F B "output_high" 1 0
+F B "output_low" 1 0
+F B "input" 1 0
+F B "input_state" 1 0
+F B "output_float" 1 0
+F B "output_drive" 1 0
+F B "output_bit" 1 1
+F B "output_toggle" 1 0
+F B "output_a" 1 0
+F B "output_b" 1 0
+F B "output_c" 1 0
+F B "output_e" 1 0
+F B "input_a" 0 0
+F B "input_b" 0 0
+F B "input_c" 0 0
+F B "input_e" 0 0
+F B "set_tris_a" 1 0
+F B "set_tris_b" 1 0
+F B "set_tris_c" 1 0
+F B "set_tris_e" 1 0
+F B "get_tris_a" 0 0
+F B "get_tris_b" 0 0
+F B "get_tris_c" 0 0
+F B "get_tris_e" 0 0
+F B "port_b_pullups" 1 0
+F B "setup_counters" 2 0
+F B "setup_wdt" 1 0
+F B "restart_cause" 0 0
+F B "restart_wdt" 0 0
+F B "get_rtcc" 0 0
+F B "set_rtcc" 1 0
+F B "get_timer0" 0 0
+F B "set_timer0" 1 0
+F B "setup_comparator" 1 0
+F B "setup_port_a" 1 0
+F B "setup_adc_ports" 1 0
+F B "setup_adc" 1 0
+F B "set_adc_channel" 1 0
+F B "read_adc" 0 1
+F B "setup_timer_0" 1 0
+F B "setup_timer_1" 1 0
+F B "get_timer1" 0 0
+F B "set_timer1" 1 0
+F B "setup_timer_2" 3 0
+F B "get_timer2" 0 0
+F B "set_timer2" 1 0
+F B "setup_timer_3" 1 0
+F B "set_timer3" 1 0
+F B "get_timer3" 0 0
+F B "setup_ccp1" 1 0
+F B "set_pwm1_duty" 1 0
+F B "setup_ccp2" 1 0
+F B "set_pwm2_duty" 1 0
+F B "setup_vref" 1 0
+F B "setup_low_volt_detect" 1 0
+F B "setup_oscillator" 1 2
+F B "setup_spi" 1 0
+F B "spi_read" 0 1
+F B "spi_write" 1 0
+F B "spi_data_is_in" 0 0
+F B "setup_spi2" 1 0
+F B "spi_read2" 0 1
+F B "spi_write2" 1 0
+F B "spi_data_is_in2" 0 0
+F B "delay_ms" 1 0
+F B "delay_us" 1 0
+F B "putchar" 1 2
+F B "puts" 1 2
+F B "getch" 0 1
+F B "gets" 1 3
+F B "kbhit" 0 1
+F B "spi_xfer" 0 3

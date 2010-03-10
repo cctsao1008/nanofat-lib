@@ -1,0 +1,31 @@
+[PROJECT]
+Target=fattest.hex
+Development_Mode=
+Processor_Text=PIC18F2550
+ToolSuite=CCS
+Processor=0x2550
+[fat32test]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=fat32test
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Opened Files]
+1=D:\Proyectos\Electrónica\fatlib-1.2\fattest.c
+2=C:\Users\Andy\Desktop\FATDriver2\fattest.c
+3=fatdriver.h
+4=fattest.h
+5=mmcdriver.h
+6=
+[Target Data]
+OptionString=-p +FH
+FileList=fattest.c
+[Units]
+Count=1
+1=fattest
+Link=0

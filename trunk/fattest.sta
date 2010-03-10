@@ -1,0 +1,104 @@
+
+ROM used: 8204 (25%)
+          8204 (25%) including unused fragments
+
+          6 Average locations per line
+          23 Average locations per statement
+
+RAM used: 677 (33%) at main() level
+          788 (38%) worst case
+
+Stack used: 5 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  130    66  19  fattest.c
+   20     0   0  fattest.h
+  367     0   0  C:\Program Files\PICC\devices\18F2550.h
+  141    86  24  mmcdriver.h
+  612   202  57  fatdriver.h
+----- -----
+ 1270   354 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     68   0   1             @PUTCHAR_1_
+0     66   0   4   186  6.1  mmc_response
+0    148   1   9   689  4.8  mmc_open_block
+0     38   0   0    72  1.2  mmc_close_block
+0     76   0   2             @PRINTF_X_46
+0    574   3   3  1446  6.0  mmc_init
+0     46   0   0             @const75
+0     50   0   0             @const76
+0     32   0   0             @const77
+0     32   0   0             @const78
+0     32   0   0             @const79
+0     76   0   0             @const80
+0     74   0   8   194  4.3  ReadSector
+0    112   1  10   218  5.5  ReadDirEntry
+0    242   1  14   806  6.8  GetEntry
+0    118   1   3   470  8.0  FindFirstFATPartition
+0    360   2  12  1372  7.8  ReadVolumeID
+0    128   1  13             @DIV3232
+0     92   1  14             @MUL3232
+0    110   1  12    80  3.5  ComputeLBA
+0     24   0   0    70  2.9  CheckIfEOD
+0     10   0   0    22  1.3  GetAttib
+0     40   0   1   123  3.8  CheckIfNormalFile
+0     86   1   1   252  4.4  DetermineDirEntryType
+0     20   0   0   129  3.0  GetFileSize
+0    144   1   7   310  4.8  GetFileName
+0     82   0   6   171  4.3  GetDirName
+0     18   0   0   108  3.0  GetFileFirstCluster
+0    488   3  36   500  6.9  ReadFAT
+0     68   0   4   140  1.7  OpenDirectory
+0    454   3  30  1447 10.3  FindNextFile
+0     10   0   0    18  1.0  CloseDirectory
+0     84   1  29   160  2.5  OpenFile
+0    440   3  73  1179  9.9  ReadFile
+0     10   0   0    18  1.0  CloseFile
+0   2390  15  71  2679  9.1  MAIN
+0     44   0   0             @const184
+0    194   1  12             @PRINTF_L32U_46
+0     36   0   0             @const187
+0     36   0   0             @const188
+0     52   0   0             @const189
+0     40   0   0             @const190
+0    190   1   9             @PRINTF_LU_46
+0     42   0   0             @const193
+0     44   0   3             @DIV88
+0    130   1   2             @PRINTF_U_46
+0     50   0   0             @const200
+0     38   0   0             @const201
+0     40   0   0             @const202
+0     52   0   0             @const203
+0     38   0   0             @const204
+0     38   0   0             @const205
+0     42   0   0             @const206
+0     22   0   0             @const208
+0     34   0   0             @const211
+0     38   0   0             @const212
+0     22   0   0             @const214
+0     34   0   0             @const217
+0     50   0   0             @const221
+0     52   0   0             @const225
+
+Program metrics:
+    Functions               26
+    Statements              354
+    Comments                239
+    Volume (V)              21304
+    Difficilty (D)          123.2
+    Effort to implement (E) 2625447
+    Time to implement (T)   40 hours, 31 minutes
+    Est Delivered Bugs (B)  6
+    Cyclomatic Complexity   53
+    Maintainability (MI)    43
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE  8200  24564  
+
+
+

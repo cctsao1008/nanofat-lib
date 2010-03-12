@@ -2,7 +2,7 @@ Nano FAT Library created by Andres Olivares (andyolivares@gmail.com)
 Version 1.2 (see CHANGELOG for details)
 
 The driver is capable of reading a root directory and its
-contents (sub-directories and files).
+contents (sub-directories and files) using a PIC microcontroller.
 
 Files can be read in user selectable data chunk sizes that must
 be multiples of 2. For example, data can be obtained in buffers

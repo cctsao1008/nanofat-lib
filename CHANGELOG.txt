@@ -12,4 +12,4 @@ Version 1.1
 
 Version 1.0
 -----------
-- Initial release written with CCS C compiler
+- Initial release written with CCS C compiler version 4.038

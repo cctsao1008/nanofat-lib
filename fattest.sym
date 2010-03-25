@@ -36,25 +36,25 @@
 27D-29F MAIN.data
 2A0-2A3 OpenDirectory.directorycluster
 2A0     FindFirstFATPartition.i
-2A0     mmc_init.i
+2A0     SDInit.res
 2A0-2B8 OpenFile.file
 2A0     ReadVolumeID.@SCRATCH
 2A0     MAIN.@SCRATCH
 2A1-2A2 @PRINTF_LU_46.P1
+2A1-2A2 SDInit.timeout
+2A1     @PRINTF_U_46.P1
 2A1     @PRINTF_X_46.P2
-2A1     @PRINTF_U_46.P3
-2A1     mmc_init.@SCRATCH
 2A1     FindFirstFATPartition.@SCRATCH
 2A1     ReadVolumeID.@SCRATCH
 2A1     MAIN.@SCRATCH
-2A2     @PRINTF_X_46.P1
-2A2     @PRINTF_U_46.P2
-2A2     mmc_init.@SCRATCH
+2A2     @PRINTF_U_46.P1
+2A2     @PRINTF_X_46.P2
 2A2     FindFirstFATPartition.@SCRATCH
 2A2     ReadVolumeID.@SCRATCH
 2A2     MAIN.@SCRATCH
 2A3-2A4 GetEntry.startingPos
 2A3     @DIV88.P1
+2A3     SDInit.@SCRATCH
 2A3     ReadVolumeID.@SCRATCH
 2A3     MAIN.@SCRATCH
 2A3     @PRINTF_LU_46.@SCRATCH
@@ -103,12 +103,12 @@
 2BA     OpenFile.@SCRATCH
 2BB     OpenFile.@SCRATCH
 2BC     OpenFile.@SCRATCH
-2BF.0   FindNextFile.filefound
 2BF-2C2 ReadFile.count
-2C0-2C1 GetFileName.filename
+2BF.0   FindNextFile.filefound
 2C0     CheckIfNormalFile.attr
-2C0-2C1 GetDirName.filename
 2C0     ReadDirEntry.num
+2C0-2C1 GetFileName.filename
+2C0-2C1 GetDirName.filename
 2C0     DetermineDirEntryType.@SCRATCH
 2C0     FindNextFile.@SCRATCH
 2C1-2C2 ReadDirEntry.offset
@@ -160,30 +160,37 @@
 302-303 ReadSector.i
 302     ReadFAT.@SCRATCH
 303     ReadFAT.@SCRATCH
-304-307 mmc_open_block.block_number
+304-307 SDOpenBlock.block_number
 304     ReadSector.@SCRATCH
 304     ReadFAT.@SCRATCH
 305     ReadSector.@SCRATCH
 305     ReadFAT.@SCRATCH
-306-309 @DIV3232.P1
-306-309 @MUL3232.P2
+306-309 @MUL3232.P1
+306-309 @DIV3232.P2
 306     ReadFAT.@SCRATCH
 307     ReadFAT.@SCRATCH
-308-30B mmc_open_block.addr
+308-309 SDOpenBlock.i
 308     ReadFAT.@SCRATCH
 309     ReadFAT.@SCRATCH
+30A-30D @MUL3232.P1
+30A     SDResponse.expected_response
 30A-30D @DIV3232.P1
-30A-30D @MUL3232.P2
+30A     SDConfigure.divisor
+30A     SDOpenBlock.@SCRATCH
 30A     ReadFAT.@SCRATCH
+30B     SpiSetClockPolarity.polarity
+30B     SpiSetTXTransition.direction
+30B     SpiSetDivisor.divisor
+30B-30C SDResponse.count
+30B     SpiSetSampleMode.mode
+30B     SDOpenBlock.@SCRATCH
 30B     ReadFAT.@SCRATCH
-30C     mmc_response.response
-30C     mmc_open_block.@SCRATCH
+30C     SpiSetDivisor.@SCRATCH
 30C     ReadFAT.@SCRATCH
-30D-30E mmc_response.count
+30D     SDResponse.@SCRATCH
 30D     ReadFAT.@SCRATCH
 30E     @DIV3232.@SCRATCH
 30E     @MUL3232.@SCRATCH
-30F     mmc_response.@SCRATCH
 30F     @DIV3232.@SCRATCH
 30F     @MUL3232.@SCRATCH
 310     @DIV3232.@SCRATCH
@@ -193,90 +200,113 @@
 312     @DIV3232.@SCRATCH
 312     @MUL3232.@SCRATCH
 313     @MUL3232.@SCRATCH
+F81.0   SDI
+F81     PORTB
+F89     LATA
+F89.5   SD_CS
+F8A     LATB
+F8A.1   SCK
+F8B     LATC
+F8B.7   SDO
+F92     TRISA
+F92.5   SD_CS_TRIS
+F93     TRISB
+F93.0   SDI_TRIS
+F93.1   SCK_TRIS
+F94     TRISC
+F94.7   SDO_TRIS
 FB4.6   C1OUT
 FB4.7   C2OUT
-FBB     CCP_2_LOW
 FBB-FBC CCP_2
+FBB     CCP_2_LOW
 FBC     CCP_2_HIGH
-FBE     CCP_1_LOW
 FBE-FBF CCP_1
+FBE     CCP_1_LOW
 FBF     CCP_1_HIGH
-FE9-FEA @READ_PROGRAM_MEMORY.P1
-FE9-FEA @WRITE_PROGRAM_MEMORY.P2
-FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
-FF6-FF8 @READ_PROGRAM_MEMORY.P2
+FC6     SSPCON1
+FC6.4   CKP
+FC6.5   SSPEN
+FC7     SSPSTAT
+FC7.6   CKE
+FC7.7   SMP
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
 
-0430  @PUTCHAR_1_
-0474  mmc_response
-06F4  mmc_open_block
-0788  mmc_close_block
-1656  @PRINTF_X_46
-04B6  mmc_init
-0004  @const75
-0032  @const76
-0064  @const77
-0084  @const78
-00A4  @const79
-00C4  @const80
-07AE  ReadSector
-0E84  ReadDirEntry
-07F8  GetEntry
-08EA  FindFirstFATPartition
-0AFE  ReadVolumeID
-0960  @DIV3232
-0AA2  @MUL3232
-0DD2  ComputeLBA
-0EF4  CheckIfEOD
-0F0C  GetAttib
-0F16  CheckIfNormalFile
-0F3E  DetermineDirEntryType
-1088  GetFileSize
-0FF8  GetFileName
-0F94  GetDirName
-0FE6  GetFileFirstCluster
-109C  ReadFAT
-0E40  OpenDirectory
-1284  FindNextFile
-16AC  CloseDirectory
-144A  OpenFile
-149E  ReadFile
-16A2  CloseFile
-16B6  MAIN
-0110  @const184
-09E0  @PRINTF_L32U_46
-013C  @const187
-0160  @const188
-0184  @const189
-01B8  @const190
-0C66  @PRINTF_LU_46
-01E0  @const193
-0D24  @DIV88
-0D50  @PRINTF_U_46
-020A  @const200
-023C  @const201
-0262  @const202
-028A  @const203
-02BE  @const204
-02E4  @const205
-030A  @const206
-0334  @const208
-034A  @const211
-036C  @const212
-0392  @const214
-03A8  @const217
-03CA  @const221
-03FC  @const225
-16B6  @cinit
+05FA  @PUTCHAR_1_
+039A  SpiSetDivisor
+03B8  SpiSetClockPolarity
+03AA  SpiSetTXTransition
+03C6  SpiSetSampleMode
+0390  SpiInit
+03FE  SDResponse
+03D4  SDConfigure
+0440  SDInit
+063E  SDOpenBlock
+06FA  SDCloseBlock
+0714  ReadSector
+0DF2  ReadDirEntry
+076E  GetEntry
+0860  FindFirstFATPartition
+0A74  ReadVolumeID
+08D6  @DIV3232
+0A18  @MUL3232
+0D40  ComputeLBA
+0E62  CheckIfEOD
+0E7A  GetAttib
+0E84  CheckIfNormalFile
+0EAC  DetermineDirEntryType
+0FF6  GetFileSize
+0F66  GetFileName
+0F02  GetDirName
+0F54  GetFileFirstCluster
+100A  ReadFAT
+0DAE  OpenDirectory
+11F2  FindNextFile
+161A  CloseDirectory
+13B8  OpenFile
+140C  ReadFile
+1610  CloseFile
+1624  MAIN
+0004  @const201
+003A  @const202
+0070  @const203
+0956  @PRINTF_L32U_46
+009C  @const206
+00C0  @const207
+00E4  @const208
+0118  @const209
+0BDC  @PRINTF_LU_46
+0140  @const212
+0C98  @DIV88
+0CC4  @PRINTF_U_46
+016A  @const219
+019C  @const220
+01C2  @const221
+01EA  @const222
+021E  @const223
+0244  @const224
+026A  @const225
+0294  @const227
+02AA  @const230
+02CC  @const231
+02F2  @const233
+0308  @const236
+032A  @const240
+15C4  @PRINTF_X_46
+035C  @const247
+1624  @cinit
 
 Project Files:
     fattest.c
     fattest.h
     C:\Program Files\PICC\devices\18F2550.h
-    mmcdriver.h
+    sddriver.h
     fatdriver.h
 
 Units:
-    D:\Proyectos\Electrónica\fatlib-1.2\fattest.c (main)
+    D:\Proyectos\Electrónica\nanofat-lib\trunk\fattest.c (main)
 
 Compiler Settings:
     Processor:      PIC18F2550
@@ -286,12 +316,12 @@ Compiler Settings:
     Short,Int,Long: 1,8,16
 
 Output Files:
-    Errors:      D:\Proyectos\Electrónica\fatlib-1.2\fattest.err
-    Ext Symbols: D:\Proyectos\Electrónica\fatlib-1.2\fattest.esym
-    INHX32:      D:\Proyectos\Electrónica\fatlib-1.2\fattest.hex
-    Symbols:     D:\Proyectos\Electrónica\fatlib-1.2\fattest.sym
-    List:        D:\Proyectos\Electrónica\fatlib-1.2\fattest.lst
-    Debug/COFF:  D:\Proyectos\Electrónica\fatlib-1.2\fattest.cof
-    Project:     D:\Proyectos\Electrónica\fatlib-1.2\fattest.PJT
+    Errors:      D:\Proyectos\Electrónica\nanofat-lib\trunk\fattest.err
+    Ext Symbols: D:\Proyectos\Electrónica\nanofat-lib\trunk\fattest.esym
+    INHX32:      D:\Proyectos\Electrónica\nanofat-lib\trunk\fattest.hex
+    Symbols:     D:\Proyectos\Electrónica\nanofat-lib\trunk\fattest.sym
+    List:        D:\Proyectos\Electrónica\nanofat-lib\trunk\fattest.lst
+    Debug/COFF:  D:\Proyectos\Electrónica\nanofat-lib\trunk\fattest.cof
+    Project:     D:\Proyectos\Electrónica\nanofat-lib\trunk\fattest.PJT
     Call Tree:   fattest.tre
     Statistics:  fattest.sta

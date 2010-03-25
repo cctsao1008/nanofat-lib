@@ -1,40 +1,39 @@
 
-ROM used: 8204 (25%)
-          8204 (25%) including unused fragments
+ROM used: 8180 (25%)
+          8180 (25%) including unused fragments
 
           6 Average locations per line
-          23 Average locations per statement
+          20 Average locations per statement
 
 RAM used: 677 (33%) at main() level
           788 (38%) worst case
 
-Stack used: 5 worst case (out of 31 total available)
+Stack used: 6 worst case (out of 31 total available)
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  130    66  19  fattest.c
+  136    72  18  fattest.c
    20     0   0  fattest.h
   367     0   0  C:\Program Files\PICC\devices\18F2550.h
-  141    86  24  mmcdriver.h
-  612   202  57  fatdriver.h
+  262   130  32  sddriver.h
+  616   206  50  fatdriver.h
 ----- -----
- 1270   354 Total
+ 1401   408 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
 0     68   0   1             @PUTCHAR_1_
-0     66   0   4   186  6.1  mmc_response
-0    148   1   9   689  4.8  mmc_open_block
-0     38   0   0    72  1.2  mmc_close_block
-0     76   0   2             @PRINTF_X_46
-0    574   3   3  1446  6.0  mmc_init
-0     46   0   0             @const75
-0     50   0   0             @const76
-0     32   0   0             @const77
-0     32   0   0             @const78
-0     32   0   0             @const79
-0     76   0   0             @const80
-0     74   0   8   194  4.3  ReadSector
+0     16   0   2    49  2.3  SpiSetDivisor
+0     14   0   1    30  1.7  SpiSetClockPolarity
+0     14   0   1    30  1.7  SpiSetTXTransition
+0     14   0   1    30  1.7  SpiSetSampleMode
+0     10   0   0    56  1.6  SpiInit
+0     66   0   4   191  5.7  SDResponse
+0     42   0   1   176  1.8  SDConfigure
+0    442   3   4  1769  6.4  SDInit
+0    188   1   8   528  4.7  SDOpenBlock
+0     26   0   0   105  0.7  SDCloseBlock
+0     90   1   8   267  5.7  ReadSector
 0    112   1  10   218  5.5  ReadDirEntry
 0    242   1  14   806  6.8  GetEntry
 0    118   1   3   470  8.0  FindFirstFATPartition
@@ -48,7 +47,7 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0     86   1   1   252  4.4  DetermineDirEntryType
 0     20   0   0   129  3.0  GetFileSize
 0    144   1   7   310  4.8  GetFileName
-0     82   0   6   171  4.3  GetDirName
+0     82   1   6   171  4.3  GetDirName
 0     18   0   0   108  3.0  GetFileFirstCluster
 0    488   3  36   500  6.9  ReadFAT
 0     68   0   4   140  1.7  OpenDirectory
@@ -57,48 +56,51 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0     84   1  29   160  2.5  OpenFile
 0    440   3  73  1179  9.9  ReadFile
 0     10   0   0    18  1.0  CloseFile
-0   2390  15  71  2679  9.1  MAIN
-0     44   0   0             @const184
+0   2512  15  71  2832  9.1  MAIN
+0     54   0   0             @const201
+0     54   0   0             @const202
+0     44   0   0             @const203
 0    194   1  12             @PRINTF_L32U_46
-0     36   0   0             @const187
-0     36   0   0             @const188
-0     52   0   0             @const189
-0     40   0   0             @const190
-0    190   1   9             @PRINTF_LU_46
-0     42   0   0             @const193
+0     36   0   0             @const206
+0     36   0   0             @const207
+0     52   0   0             @const208
+0     40   0   0             @const209
+0    188   1   9             @PRINTF_LU_46
+0     42   0   0             @const212
 0     44   0   3             @DIV88
-0    130   1   2             @PRINTF_U_46
-0     50   0   0             @const200
-0     38   0   0             @const201
-0     40   0   0             @const202
-0     52   0   0             @const203
-0     38   0   0             @const204
-0     38   0   0             @const205
-0     42   0   0             @const206
-0     22   0   0             @const208
-0     34   0   0             @const211
-0     38   0   0             @const212
-0     22   0   0             @const214
-0     34   0   0             @const217
-0     50   0   0             @const221
-0     52   0   0             @const225
+0    124   1   2             @PRINTF_U_46
+0     50   0   0             @const219
+0     38   0   0             @const220
+0     40   0   0             @const221
+0     52   0   0             @const222
+0     38   0   0             @const223
+0     38   0   0             @const224
+0     42   0   0             @const225
+0     22   0   0             @const227
+0     34   0   0             @const230
+0     38   0   0             @const231
+0     22   0   0             @const233
+0     34   0   0             @const236
+0     50   0   0             @const240
+0     76   0   2             @PRINTF_X_46
+0     52   0   0             @const247
 
 Program metrics:
-    Functions               26
-    Statements              354
-    Comments                239
-    Volume (V)              21304
-    Difficilty (D)          123.2
-    Effort to implement (E) 2625447
-    Time to implement (T)   40 hours, 31 minutes
-    Est Delivered Bugs (B)  6
-    Cyclomatic Complexity   53
-    Maintainability (MI)    43
+    Functions               32
+    Statements              408
+    Comments                272
+    Volume (V)              23100
+    Difficilty (D)          136.7
+    Effort to implement (E) 3157564
+    Time to implement (T)   48 hours, 44 minutes
+    Est Delivered Bugs (B)  7
+    Cyclomatic Complexity   55
+    Maintainability (MI)    46
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     4  0  
-00004-07FFE  8200  24564  
+00004-07FFE  8176  24588  
 
 
 

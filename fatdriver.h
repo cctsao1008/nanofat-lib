@@ -3,7 +3,6 @@
 #define TRUE 1
 #endif
 
-
 #ifndef FALSE
 #define FALSE 0
 #endif
@@ -94,14 +93,19 @@ BOOLEAN ReadSector(unsigned int32 lba)
 {
    unsigned long i;
    
-   mmc_open_block(lba);
-   for (i = 0; i < BUFFER_SIZE; i++)
+   if (SDOpenBlock(lba) == TRUE)
    {
-      SectorBuffer[i] = spi_read(0xFF);
+      for (i = 0; i < BUFFER_SIZE; i++)
+      {
+         SectorBuffer[i] = Spi_Read(0xFF);
+      }
+      
+      SDCloseBlock();
+      return TRUE;
+   } else {
+      SDCloseBlock();
+      return FALSE;
    }
-   mmc_close_block();
-   
-   return TRUE;
 }
 
 void ReadDirEntry(BYTE num)

@@ -16,11 +16,11 @@ AdditionalOptionString=
 [Windows]
 0=0000 %S 0 0 796 451 3 0
 [Opened Files]
-1=D:\Proyectos\Electrónica\fatlib-1.2\fattest.c
-2=C:\Users\Andy\Desktop\FATDriver2\fattest.c
-3=fatdriver.h
-4=fattest.h
-5=mmcdriver.h
+1=D:\Proyectos\Electrónica\nanofat-lib\trunk\fattest.c
+2=fatdriver.h
+3=fattest.h
+4=sddriver.h
+5=
 6=
 [Target Data]
 OptionString=-p +FH

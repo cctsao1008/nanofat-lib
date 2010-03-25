@@ -1,5 +1,5 @@
 #include "fattest.h"
-#include "mmcdriver.h"
+#include "sddriver.h"
 #include "fatdriver.h"
 
 void main()
@@ -16,7 +16,13 @@ void main()
       
    set_tris_a(0x00);
    
-   mmc_init();
+   if (SDInit() == TRUE)
+   {
+      printf("SD card initialized successfully!\r\n\r\n");
+   } else {
+      printf("Can not initialize SD card!\r\nHALTED!!!\r\n");
+      while (TRUE);
+   }
    
    // Find the first FAT partition
    FindFirstFATPartition();

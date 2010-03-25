@@ -1,5 +1,5 @@
 #include "fattest.h"
-#include "mmcdriver.h"
+#include "sddriver.h"
 #include "fatdriver.h"
 
 void main()
@@ -16,14 +16,25 @@ void main()
       
    set_tris_a(0x00);
    
-   mmc_init();
+   if (SDInit() == TRUE)
+   {
+      printf("SD card initialized successfully!\r\n");
+   } else {
+      printf("Can not initialize SD card!\r\nHALTED!!!\r\n");
+      while (TRUE);
+   }
    
    // Find the first FAT partition
    FindFirstFATPartition();
+   
    printf("Partition LBA Begin: %lu\r\n", PartitionLBABegin);
-   if(entry.Valid){
-      if(entry.FAT32) printf("System is: FAT32\r\n"); else printf("System is: FAT16\r\n");
-   }else{
+   if (pEntry.IsValid)
+   {
+      if (pEntry.IsFAT32)
+         printf("System is: FAT32\r\n");
+      else
+         printf("System is: FAT16\r\n");
+   } else {
       printf("Memory format not FAT16 or FAT32\r\n");
    }
    

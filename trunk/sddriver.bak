@@ -221,7 +221,7 @@ BYTE SDInit(void)
    return TRUE;
 }
 
-BYTE SDOpenBlock(unsigned int32 block_number)
+BYTE SDOpenBlockForReading(unsigned int32 block_number)
 {
    unsigned int16 i;
    
@@ -233,12 +233,12 @@ BYTE SDOpenBlock(unsigned int32 block_number)
    block_number *= 512;
    
    // Send read command
-   SpiRW(0x51);
-   SpiRW((BYTE)(block_number >> 24));
-   SpiRW((BYTE)(block_number >> 16));
-   SpiRW((BYTE)(block_number >> 8));
-   SpiRW((BYTE)(block_number));
-   SpiRW(0xFF);
+   Spi_Write(0x51);
+   Spi_Write((BYTE)(block_number >> 24));
+   Spi_Write((BYTE)(block_number >> 16));
+   Spi_Write((BYTE)(block_number >> 8));
+   Spi_Write((BYTE)(block_number));
+   Spi_Write(0xFF);
    
    // Wait for response... exit if timeout
    if (SDResponse(0x00) == FALSE) return FALSE;
@@ -249,13 +249,70 @@ BYTE SDOpenBlock(unsigned int32 block_number)
    return TRUE;
 }
 
-void SDCloseBlock()
+BYTE SDOpenBlockForWriting(unsigned int32 block_number)
+{
+   unsigned int16 i;
+   
+   SDDeassert();
+   SDConfigure(SPI_DIV_4);
+   
+   SDAssert();
+   
+   block_number *= 512;
+   
+   // Send read command
+   Spi_Write(0x51);
+   Spi_Write((BYTE)(block_number >> 24));
+   Spi_Write((BYTE)(block_number >> 16));
+   Spi_Write((BYTE)(block_number >> 8));
+   Spi_Write((BYTE)(block_number));
+   Spi_Write(0xFF);
+   
+   // Wait for response... exit if timeout
+   if (SDResponse(0x00) == FALSE) return FALSE;
+   
+   // Send data token
+   Spi_Write(0xFE);
+   
+   return TRUE;
+}
+
+void SDCloseReadBlock()
 {
    // Dummy CRC
-   SpiRW(0xFF);
-   SpiRW(0xFF);
+   Spi_Write(0xFF);
+   Spi_Write(0xFF);
    
    SDDeassert();
    
    SpiDisable();
+}
+
+BYTE SDCloseWrittenBlock()
+{
+   unsigned int16 timeout;
+   BYTE response;
+   
+   timeout = 0x0FFF;
+   
+   // Dummy CRC
+   Spi_Write(0xFF);
+   Spi_Write(0xFF);
+   
+   // Wait for SD to be ready
+   while (((Spi_Read(0xFF) & 0x1F) != 0x05) && timeout)
+   {
+      timeout--;
+   }
+   
+   if (timeout == 0)
+   {
+      response = FALSE;
+   }
+   
+   SDDeassert();
+   
+   SpiDisable();
+   
+   return response;
 }

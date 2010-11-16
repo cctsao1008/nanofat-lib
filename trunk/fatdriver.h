@@ -93,17 +93,17 @@ BOOLEAN ReadSector(unsigned int32 lba)
 {
    unsigned long i;
    
-   if (SDOpenBlock(lba) == TRUE)
+   if (SDOpenBlockForReading(lba) == TRUE)
    {
       for (i = 0; i < BUFFER_SIZE; i++)
       {
          SectorBuffer[i] = Spi_Read(0xFF);
       }
       
-      SDCloseBlock();
+      SDCloseReadBlock();
       return TRUE;
    } else {
-      SDCloseBlock();
+      SDCloseReadBlock();
       return FALSE;
    }
 }

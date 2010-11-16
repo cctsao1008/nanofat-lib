@@ -1,4 +1,5 @@
 >>> Warning 202 "D:\Proyectos\Electrónica\nanofat-lib\trunk\sddriver.h" Line 118(9,12): Variable never used:   res
 >>> Warning 202 "D:\Proyectos\Electrónica\nanofat-lib\trunk\sddriver.h" Line 226(19,20): Variable never used:   i
+>>> Warning 202 "D:\Proyectos\Electrónica\nanofat-lib\trunk\sddriver.h" Line 254(19,20): Variable never used:   i
       Memory usage:   ROM=25%      RAM=33% - 38%
-      0 Errors,  2 Warnings.
+      0 Errors,  3 Warnings.

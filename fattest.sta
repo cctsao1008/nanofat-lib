@@ -3,7 +3,7 @@ ROM used: 8180 (25%)
           8180 (25%) including unused fragments
 
           6 Average locations per line
-          20 Average locations per statement
+          18 Average locations per statement
 
 RAM used: 677 (33%) at main() level
           788 (38%) worst case
@@ -12,13 +12,13 @@ Stack used: 6 worst case (out of 31 total available)
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  136    72  18  fattest.c
+  136    72  16  fattest.c
    20     0   0  fattest.h
   367     0   0  C:\Program Files\PICC\devices\18F2550.h
-  262   130  32  sddriver.h
-  616   206  50  fatdriver.h
+  320   165  37  sddriver.h
+  616   206  47  fatdriver.h
 ----- -----
- 1401   408 Total
+ 1459   443 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
@@ -31,8 +31,8 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0     66   0   4   191  5.7  SDResponse
 0     42   0   1   176  1.8  SDConfigure
 0    442   3   4  1769  6.4  SDInit
-0    188   1   8   528  4.7  SDOpenBlock
-0     26   0   0   105  0.7  SDCloseBlock
+0    188   1   8   528  4.7  SDOpenBlockForReading
+0     26   0   0    84  1.6  SDCloseReadBlock
 0     90   1   8   267  5.7  ReadSector
 0    112   1  10   218  5.5  ReadDirEntry
 0    242   1  14   806  6.8  GetEntry
@@ -57,45 +57,45 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0    440   3  73  1179  9.9  ReadFile
 0     10   0   0    18  1.0  CloseFile
 0   2512  15  71  2832  9.1  MAIN
-0     54   0   0             @const201
-0     54   0   0             @const202
-0     44   0   0             @const203
+0     54   0   0             @const207
+0     54   0   0             @const208
+0     44   0   0             @const209
 0    194   1  12             @PRINTF_L32U_46
-0     36   0   0             @const206
-0     36   0   0             @const207
-0     52   0   0             @const208
-0     40   0   0             @const209
+0     36   0   0             @const212
+0     36   0   0             @const213
+0     52   0   0             @const214
+0     40   0   0             @const215
 0    188   1   9             @PRINTF_LU_46
-0     42   0   0             @const212
+0     42   0   0             @const218
 0     44   0   3             @DIV88
 0    124   1   2             @PRINTF_U_46
-0     50   0   0             @const219
-0     38   0   0             @const220
-0     40   0   0             @const221
-0     52   0   0             @const222
-0     38   0   0             @const223
-0     38   0   0             @const224
-0     42   0   0             @const225
-0     22   0   0             @const227
-0     34   0   0             @const230
-0     38   0   0             @const231
+0     50   0   0             @const225
+0     38   0   0             @const226
+0     40   0   0             @const227
+0     52   0   0             @const228
+0     38   0   0             @const229
+0     38   0   0             @const230
+0     42   0   0             @const231
 0     22   0   0             @const233
 0     34   0   0             @const236
-0     50   0   0             @const240
+0     38   0   0             @const237
+0     22   0   0             @const239
+0     34   0   0             @const242
+0     50   0   0             @const246
 0     76   0   2             @PRINTF_X_46
-0     52   0   0             @const247
+0     52   0   0             @const253
 
 Program metrics:
     Functions               32
-    Statements              408
-    Comments                272
-    Volume (V)              23100
-    Difficilty (D)          136.7
-    Effort to implement (E) 3157564
-    Time to implement (T)   48 hours, 44 minutes
+    Statements              443
+    Comments                277
+    Volume (V)              23069
+    Difficilty (D)          138.4
+    Effort to implement (E) 3192792
+    Time to implement (T)   49 hours, 16 minutes
     Est Delivered Bugs (B)  7
     Cyclomatic Complexity   55
-    Maintainability (MI)    46
+    Maintainability (MI)    44
 
  Segment     Used  Free
 -----------  ----  ----

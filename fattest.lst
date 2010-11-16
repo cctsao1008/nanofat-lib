@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 4.038, 15507               25-mar-10 01:17
+CCS PCH C Compiler, Version 4.038, 15507               16-nov-10 10:50
 
                Filename: D:\Proyectos\Electrónica\nanofat-lib\trunk\fattest.lst
 
@@ -604,7 +604,7 @@ CCS PCH C Compiler, Version 4.038, 15507               25-mar-10 01:17
 .................... } 
 05F6:  GOTO   1654 (RETURN)
 ....................  
-.................... BYTE SDOpenBlock(unsigned int32 block_number) 
+.................... BYTE SDOpenBlockForReading(unsigned int32 block_number) 
 .................... { 
 ....................    unsigned int16 i; 
 ....................     
@@ -710,7 +710,35 @@ CCS PCH C Compiler, Version 4.038, 15507               25-mar-10 01:17
 .................... } 
 06F6:  GOTO   0726 (RETURN)
 ....................  
-.................... void SDCloseBlock() 
+.................... BYTE SDOpenBlockForWriting(unsigned int32 block_number) 
+.................... { 
+....................    unsigned int16 i; 
+....................     
+....................    SDDeassert(); 
+....................    SDConfigure(SPI_DIV_4); 
+....................     
+....................    SDAssert(); 
+....................     
+....................    block_number *= 512; 
+....................     
+....................    // Send read command 
+....................    Spi_Write(0x51); 
+....................    Spi_Write((BYTE)(block_number >> 24)); 
+....................    Spi_Write((BYTE)(block_number >> 16)); 
+....................    Spi_Write((BYTE)(block_number >> 8)); 
+....................    Spi_Write((BYTE)(block_number)); 
+....................    Spi_Write(0xFF); 
+....................     
+....................    // Wait for response... exit if timeout 
+....................    if (SDResponse(0x00) == FALSE) return FALSE; 
+....................     
+....................    // Send data token 
+....................    Spi_Write(0xFE); 
+....................     
+....................    return TRUE; 
+.................... } 
+....................  
+.................... void SDCloseReadBlock() 
 .................... { 
 ....................    // Dummy CRC 
 ....................    Spi_Write(0xFF); 
@@ -733,6 +761,36 @@ CCS PCH C Compiler, Version 4.038, 15507               25-mar-10 01:17
 0710:  BCF    FC6.5
 .................... } 
 0712:  RETLW  00
+....................  
+.................... BYTE SDCloseWrittenBlock() 
+.................... { 
+....................    unsigned int16 timeout; 
+....................    BYTE response; 
+....................     
+....................    timeout = 0x0FFF; 
+....................    response = TRUE; 
+....................     
+....................    // Dummy CRC 
+....................    Spi_Write(0xFF); 
+....................    Spi_Write(0xFF); 
+....................     
+....................    // Wait for SD to be ready 
+....................    while (((Spi_Read(0xFF) & 0x1F) != 0x05) && timeout) 
+....................    { 
+....................       timeout--; 
+....................    } 
+....................     
+....................    if (timeout == 0) 
+....................    { 
+....................       response = FALSE; 
+....................    } 
+....................     
+....................    SDDeassert(); 
+....................     
+....................    SpiDisable(); 
+....................     
+....................    return response; 
+.................... } 
 ....................  
 .................... #include "fatdriver.h" 
 .................... // Boolean values if not defined 
@@ -830,7 +888,7 @@ CCS PCH C Compiler, Version 4.038, 15507               25-mar-10 01:17
 .................... { 
 ....................    unsigned long i; 
 ....................     
-....................    if (SDOpenBlock(lba) == TRUE) 
+....................    if (SDOpenBlockForReading(lba) == TRUE) 
 0714:  MOVFF  301,307
 0718:  MOVFF  300,306
 071C:  MOVFF  2FF,305
@@ -866,7 +924,7 @@ CCS PCH C Compiler, Version 4.038, 15507               25-mar-10 01:17
 0754:  INCF   x03,F
 0756:  BRA    0730
 ....................        
-....................       SDCloseBlock(); 
+....................       SDCloseReadBlock(); 
 0758:  MOVLB  0
 075A:  RCALL  06FA
 ....................       return TRUE; 
@@ -875,7 +933,7 @@ CCS PCH C Compiler, Version 4.038, 15507               25-mar-10 01:17
 0760:  BRA    076C
 ....................    } else { 
 0762:  BRA    076C
-....................       SDCloseBlock(); 
+....................       SDCloseReadBlock(); 
 0764:  RCALL  06FA
 ....................       return FALSE; 
 0766:  MOVLW  00

@@ -17,10 +17,10 @@ AdditionalOptionString=
 0=0000 %S 0 0 796 451 3 0
 [Opened Files]
 1=D:\Proyectos\Electrónica\nanofat-lib\trunk\fattest.c
-2=fatdriver.h
-3=fattest.h
-4=sddriver.h
-5=
+2=D:\Proyectos\Electrónica\nanofat-lib\trunk\fatdriver.h
+3=D:\Proyectos\Electrónica\nanofat-lib\trunk\fattest.h
+4=D:\Proyectos\Electrónica\nanofat-lib\trunk\sddriver.h
+5=C:\Program Files\PICC\devices\18F2550.h
 6=
 [Target Data]
 OptionString=-p +FH

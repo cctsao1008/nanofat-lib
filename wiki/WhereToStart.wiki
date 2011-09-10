@@ -25,4 +25,4 @@ _Es MUY importante descomprimir el archivo *image.rar* para utilizar la simulaci
 
 =Soporte=
 La librería se entrega TAL CUAL sin ninguna garantía y sin ningún soporte. De todos modos, si tienes alguna duda o consulta puedes escribirme a andyolivares@gmail.com. Trataré de contestar tan pronto como pueda. Además, si encuentras algún error, por favor utiliza los canales de reporte de errores oficiales. Esto es, el Issue tracker.
-Estarás contrinuyendo a mejorar la librería.
+Estarás contribuyendo a mejorar la librería.

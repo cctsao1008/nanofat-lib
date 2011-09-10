@@ -9,7 +9,7 @@ nanoFAT library comes with a ProteusVSM project for simulation. Using this simul
 _It's VERY important to decompress the *image.rar* file in order to use the simulation as it contains a raw 128MB FAT32 image used by the simulator._
 
 =Support=
-The library is provided AS IS with no warranties and no support at all. Anyway, if you have questions you can mail me at andyolivares@gmail.com. I'll try to ask as soon as possible. Also, if you found a bug, please report it using the official bug reporting channels. That is using the Issue tracker.
+The library is provided AS IS with no warranties and no support at all. Anyway, if you have questions you can mail me at andyolivares@gmail.com. I'll try to answer as soon as possible. Also, if you found a bug, please report it using the official bug reporting channels. That is, using the Issue tracker.
 You will be helping to improve the library.
 
 ----
